@@ -5,6 +5,7 @@ import { Hero } from "./modules/Hero";
 import { Service } from "@/modules/Service";
 import { Projects } from "@/modules/Projects";
 import { Career } from "./modules/Career";
+import { ContactUs } from "@/modules/ContactUs";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <Projects />
         <Career />
       </SectionSplit>
+
+      <ContactUs />
     </>
   );
 }

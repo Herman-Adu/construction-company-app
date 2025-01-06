@@ -4,6 +4,7 @@ import { CoreValues } from "./modules/CoreValues";
 import { Hero } from "./modules/Hero";
 import { Service } from "@/modules/Service";
 import { Projects } from "@/modules/Projects";
+import { Career } from "./modules/Career";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <AboutUs />
         <Service />
         <Projects />
+        <Career />
       </SectionSplit>
     </>
   );

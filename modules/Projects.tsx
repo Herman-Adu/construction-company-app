@@ -9,7 +9,6 @@ export const Projects = () => {
     <section>
       <Container>
         <SectionName name="Projects" />
-
         <EmblaCarousel slides={images} />
       </Container>
     </section>

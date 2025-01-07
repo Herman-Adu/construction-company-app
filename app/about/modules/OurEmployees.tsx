@@ -1,5 +1,4 @@
 import { SectionName } from "@/components/SectionName";
-import Image from "next/image";
 import React from "react";
 import { Card } from "../components/Card";
 

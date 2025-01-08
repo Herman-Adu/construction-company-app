@@ -9,12 +9,14 @@ import React, { ReactNode } from "react";
 
 interface ServicePageContentProps {
   title: string;
+  subtitle: string;
   description: string | ReactNode;
   image: string;
 }
 
 export const ServicePageContent = ({
   title,
+  subtitle,
   description,
   image,
 }: ServicePageContentProps) => {
@@ -24,7 +26,9 @@ export const ServicePageContent = ({
 
       <SectionSplit>
         <Container>
-          <h1 className="mb-8">{title}</h1>
+          <h2 className="mb-8">{title}</h2>
+
+          <p className="mb-8">{subtitle}</p>
 
           <div className="grid gird-cols-1 md:grid-cols-[0.35fr_0.65fr] bg-white">
             <div className="relative h-96 md:h-full">

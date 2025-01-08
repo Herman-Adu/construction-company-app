@@ -1,14 +1,14 @@
 import { ServicePageContent } from "../modules/ServicePageContent";
 
-export default function GeneralContracting() {
+export default function RenovationAndRestoration() {
   return <ServicePageContent {...data} />;
 }
 
 const data = {
-  title: "GENERAL CONTRACTING",
+  title: "RENOVATION AND RESTORATION",
   subtitle:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  image: "/hero.jpg",
+    "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.",
+  image: "/hero3.jpg",
   description: (
     <>
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has

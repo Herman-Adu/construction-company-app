@@ -3,7 +3,7 @@ import { SectionName } from "@/components/SectionName";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
-export const Service = () => {
+export const Services = () => {
   return (
     <section>
       <Container>

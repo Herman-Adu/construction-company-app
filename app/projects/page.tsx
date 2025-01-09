@@ -5,7 +5,7 @@ import { SectionSplit } from "@/components/SectionSplit";
 import { Banner } from "@/modules/Banner";
 import { Project } from "./components/Project";
 import Filtering from "./components/Filtering";
-import { SearchParams } from "@/types/routes";
+import { Route, SearchParams } from "@/types/routes";
 import { PaginationControl } from "./components/PaginationControl";
 
 export default function ProjectsPage({
@@ -70,7 +70,10 @@ export default function ProjectsPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
             {paginatedProjects.map((project) => {
               return (
-                <Link href={`/projects/${project.id}`} key={project.title}>
+                <Link
+                  href={`${Route.PROJECTS}/${project.id}`}
+                  key={project.title}
+                >
                   <Project {...project} />
                 </Link>
               );

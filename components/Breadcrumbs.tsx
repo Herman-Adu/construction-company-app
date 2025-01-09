@@ -1,5 +1,6 @@
 "use client";
 
+import { Route } from "@/types/routes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -22,7 +23,7 @@ export const Breadcrumbs = () => {
     <nav>
       <ol className="flex items-center space-x-2 text-sm">
         <li>
-          <Link href="/" className="text-white">
+          <Link href={`${Route.HOME}`} className="text-white">
             Home
           </Link>
         </li>

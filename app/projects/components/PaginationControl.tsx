@@ -1,3 +1,4 @@
+import { Route } from "@/types/routes";
 import Link from "next/link";
 import React from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -21,7 +22,9 @@ export const PaginationControl = ({
     <div className="flex justify-center mt-8">
       <div className="flex space-X-2">
         <Link
-          href={`/projects?page=${Number(page) - 1}&per_page=${perPage}`}
+          href={`${Route.PROJECTS}?page=${
+            Number(page) - 1
+          }&per_page=${perPage}`}
           className={`flex items-center px-4 py-2 rounded-l-md broder border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors ${
             !hasPrevPage ? "pointer-events-none opacity-50" : ""
           }`}
@@ -36,7 +39,7 @@ export const PaginationControl = ({
           return (
             <Link
               key={`page-${index}`}
-              href={`/projects?page=${currentPage}&per_page=${perPage}`}
+              href={`${Route.PROJECTS}?page=${currentPage}&per_page=${perPage}`}
               className={`px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors ${
                 Number(page) === currentPage ? "bg-gray-200 font-semibold" : ""
               }`}
@@ -47,7 +50,9 @@ export const PaginationControl = ({
         })}
 
         <Link
-          href={`/projects?page=${Number(page) + 1}&per_page=${perPage}`}
+          href={`${Route.PROJECTS}?page=${
+            Number(page) + 1
+          }&per_page=${perPage}`}
           className={`flex items-center px-4 py-2 rounded-l-md broder border-gray-300 bg-white text-gray-700 hover:bg-gray-100 transition-colors ${
             !hasNextPage ? "pointer-events-none opacity-50" : ""
           }`}

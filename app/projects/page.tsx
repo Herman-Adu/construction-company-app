@@ -91,7 +91,118 @@ export default function ProjectsPage({
   );
 }
 
-const projects = [
+export const projects = [
+  {
+    id: 1,
+    title: "project 1",
+    year: 2021,
+    location: "New York",
+    images: ["/hero.jpg"],
+    description:
+      "A cutting-edge architectural project located in the heart of New York, combining modern design with sustainable elements.",
+  },
+  {
+    id: 2,
+    title: "project 2",
+    year: 2020,
+    location: "Los Angeles",
+    images: ["/hero2.jpg"],
+    description:
+      "An innovative residential development in Los Angeles, featuring sleek, minimalist designs and energy-efficient features.",
+  },
+  {
+    id: 3,
+    title: "project 3",
+    year: 2019,
+    location: "Chicago",
+    images: ["/hero3.jpg"],
+    description:
+      "A contemporary office building in Chicago that integrates smart technologies and open-plan layouts to foster collaboration.",
+  },
+  {
+    id: 4,
+    title: "project 4",
+    year: 2018,
+    location: "Miami",
+    images: ["/hero.jpg"],
+    description:
+      "A luxurious beachfront property in Miami, designed to offer stunning views and top-tier amenities.",
+  },
+  {
+    id: 5,
+    title: "project 5",
+    year: 2017,
+    location: "San Francisco",
+    images: ["/hero2.jpg"],
+    description:
+      "A mixed-use development in San Francisco, blending residential and commercial spaces for a vibrant urban experience.",
+  },
+  {
+    id: 6,
+    title: "project 6",
+    year: 2016,
+    location: "Seattle",
+    images: ["/hero3.jpg"],
+    description:
+      "A high-tech industrial complex in Seattle, emphasizing innovation and sustainability through eco-friendly materials.",
+  },
+  {
+    id: 7,
+    title: "project 7",
+    year: 2021,
+    location: "New York",
+    images: ["/hero.jpg"],
+    description:
+      "A modern skyscraper in New York, setting new standards for green building practices in urban settings.",
+  },
+  {
+    id: 8,
+    title: "project 8",
+    year: 2020,
+    location: "Los Angeles",
+    images: ["/hero2.jpg"],
+    description:
+      "A cutting-edge cultural center in Los Angeles, blending art and technology to create immersive experiences.",
+  },
+  {
+    id: 9,
+    title: "project 9",
+    year: 2019,
+    location: "Chicago",
+    images: ["/hero3.jpg"],
+    description:
+      "A state-of-the-art healthcare facility in Chicago, designed for patient comfort and medical excellence.",
+  },
+  {
+    id: 10,
+    title: "project 10",
+    year: 2018,
+    location: "Miami",
+    images: ["/hero.jpg"],
+    description:
+      "An iconic waterfront hotel in Miami, offering world-class service and breathtaking ocean views.",
+  },
+  {
+    id: 11,
+    title: "project 11",
+    year: 2017,
+    location: "San Francisco",
+    images: ["/hero2.jpg"],
+    description:
+      "A sustainable office park in San Francisco, featuring green roofs and energy-efficient architecture.",
+  },
+  {
+    id: 12,
+    title: "project 12",
+    year: 2016,
+    location: "Seattle",
+    images: ["/hero3.jpg"],
+    description:
+      "An innovative tech campus in Seattle, with state-of-the-art facilities designed for future-focused businesses.",
+  },
+];
+
+/* export const projects = [
   {
     id: 1,
     title: "project 1",
@@ -176,4 +287,4 @@ const projects = [
     location: "Seattle",
     images: ["/hero3.jpg"],
   },
-];
+]; */

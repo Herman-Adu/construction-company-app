@@ -13,6 +13,11 @@ export const Breadcrumbs = () => {
     paths[index] = path.replace(/-/g, " ");
   });
 
+  // remove id of specfic projects on bread crumbs and pops the last is which was project onto bread crumb
+  if (Number.isInteger(Number(paths[paths.length - 1]))) {
+    paths.pop();
+  }
+
   return (
     <nav>
       <ol className="flex items-center space-x-2 text-sm">

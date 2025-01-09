@@ -23,7 +23,7 @@ export const Filtering = ({ years, locations }: FilteringProps) => {
     // set params with NEW NAME AND VALUE
     params.set(name, value);
 
-    // Based on filter add new params to the url - http://localhost:3000/projects?year=2016&location=Seattle
+    // Based on filter push new params to the url - http://localhost:3000/projects?year=2016&location=Seattle
     router.push(pathname + "?" + params.toString());
   };
 

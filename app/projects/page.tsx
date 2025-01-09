@@ -6,12 +6,29 @@ import { Banner } from "@/modules/Banner";
 import { Project } from "./components/Project";
 import Filtering from "./components/Filtering";
 import { SearchParams } from "@/types/routes";
+import { PaginationControl } from "./components/PaginationControl";
 
 export default function ProjectsPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
+  // Get the page and per page from search params
+  // page will be the enumber of the page
+  const page = searchParams[SearchParams.PAGE] ?? "1";
+
+  // perPage shows how many we want to see per page
+  const perPage = searchParams[SearchParams.PER_PAGE] ?? "6";
+
+  // Get the start number for when we are going to start slicing the array
+  const start = (Number(page) - 1) * Number(perPage);
+
+  // Get the end number for when we are going to end slicing the array
+  const end = start + Number(perPage);
+
+  // Total pages
+  const totalPages = Math.ceil(projects.length / Number(perPage));
+
   // get the year each project was completed
   const years = projects.map((project) => project.year);
 
@@ -20,6 +37,7 @@ export default function ProjectsPage({
 
   // Filter projects
   const filteredProjects = projects.filter((project) => {
+    // get year and location from search params
     const year = searchParams[SearchParams.YEAR];
     const location = searchParams[SearchParams.LOCATION];
 
@@ -29,8 +47,16 @@ export default function ProjectsPage({
       return project.year == Number(year);
     } else if (location) {
       return project.location == location;
+    } else {
+      return true;
     }
   });
+
+  // Paginated projects
+  const paginatedProjects = filteredProjects.slice(start, end);
+
+  //
+  const isPaginationVisible = filteredProjects.length > Number(perPage);
 
   return (
     <>
@@ -42,7 +68,7 @@ export default function ProjectsPage({
           <Filtering years={years} locations={locations} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
-            {filteredProjects.map((project) => {
+            {paginatedProjects.map((project) => {
               return (
                 <Link href={`/projects/${project.id}`} key={project.title}>
                   <Project {...project} />
@@ -50,6 +76,15 @@ export default function ProjectsPage({
               );
             })}
           </div>
+          {isPaginationVisible && (
+            <PaginationControl
+              page={page}
+              perPage={perPage}
+              hasNextPage={projects.length > end}
+              hasPrevPage={start > 0}
+              totalPages={totalPages}
+            />
+          )}
         </Container>
       </SectionSplit>
     </>
@@ -95,6 +130,48 @@ const projects = [
   {
     id: 6,
     title: "project 6",
+    year: 2016,
+    location: "Seattle",
+    images: ["/hero3.jpg"],
+  },
+  {
+    id: 7,
+    title: "project 7",
+    year: 2021,
+    location: "New York",
+    images: ["/hero.jpg"],
+  },
+  {
+    id: 8,
+    title: "project 8",
+    year: 2020,
+    location: "Los Angeles",
+    images: ["/hero2.jpg"],
+  },
+  {
+    id: 9,
+    title: "project 9",
+    year: 2019,
+    location: "Chicago",
+    images: ["/hero3.jpg"],
+  },
+  {
+    id: 10,
+    title: "project 10",
+    year: 2018,
+    location: "Miami",
+    images: ["/hero.jpg"],
+  },
+  {
+    id: 11,
+    title: "project 11",
+    year: 2017,
+    location: "San Francisco",
+    images: ["/hero2.jpg"],
+  },
+  {
+    id: 12,
+    title: "project 12",
     year: 2016,
     location: "Seattle",
     images: ["/hero3.jpg"],

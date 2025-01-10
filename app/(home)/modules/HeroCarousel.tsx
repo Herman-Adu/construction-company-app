@@ -2,12 +2,16 @@
 
 import { Overlay } from "@/components/Overlay";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const images = ["/parapija.jpg", "/hero2.jpg", "/hero3.jpg"];
 
 export const HeroCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // set state and a ref for parallax effect
+  const [offset, SetOffset] = useState(0);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handleImageChange = (newIndex: number) => {
     if (newIndex !== currentImageIndex) {
@@ -22,9 +26,29 @@ export const HeroCarousel = () => {
     return () => clearInterval(intervalId);
   }, [currentImageIndex]);
 
+  // parallax effect useEffect
+  useEffect(() => {
+    if (containerRef.current) {
+      const speed = 0.5;
+      containerRef.current.style.transform = `translateY(${offset * speed}px)`;
+    }
+  }, [offset]);
+
+  // useEffect to handleScroll for parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      SetOffset(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // remove listener on unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <div className="absolute inset-0 overflow-hidden">
+      <div ref={containerRef} className="absolute inset-0 overflow-hidden">
         {images.flatMap((img, index) => (
           <div
             key={index}
@@ -33,6 +57,9 @@ export const HeroCarousel = () => {
                 ? "opacity-100 scale-105"
                 : "opacity-0 scale-100"
             }`}
+            style={{
+              transform: `translateY(${(index - currentImageIndex) * 5}% )`,
+            }}
           >
             <Image
               src={img}

@@ -1,7 +1,13 @@
 import { Route, SearchParams } from "@/types/routes";
 import Link from "next/link";
 import React from "react";
-import { GrInfo, GrPhone, GrProjects, GrServices } from "react-icons/gr";
+import {
+  GrArticle,
+  GrInfo,
+  GrPhone,
+  GrProjects,
+  GrServices,
+} from "react-icons/gr";
 
 export const Links = () => {
   return (
@@ -36,6 +42,11 @@ const links = [
     href: `${Route.PROJECTS}?${SearchParams.PAGE}=1&${SearchParams.PER_PAGE}=6`,
     text: "Our Work",
     icon: GrProjects,
+  },
+  {
+    href: `${Route.LATEST_NEWS}?${SearchParams.PAGE}=1&${SearchParams.PER_PAGE}=6`,
+    text: "Latest News",
+    icon: GrArticle,
   },
   {
     href: Route.CONTACT,

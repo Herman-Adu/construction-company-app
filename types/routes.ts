@@ -7,6 +7,8 @@ export enum Route {
   MONOLITHIC_CONSTRUCTION = "/services/monolithic-construction",
   PROJECTS = "/projects",
   PROJECT = "/project/:id",
+  LATEST_NEWS = "/news",
+  ARTICLES = "/news/:slug",
   CONTACT = "/contact",
 }
 
@@ -15,4 +17,5 @@ export enum SearchParams {
   LOCATION = "location",
   PAGE = "page",
   PER_PAGE = "per_page",
+  CATEGORY = "category",
 }

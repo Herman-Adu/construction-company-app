@@ -32,7 +32,7 @@ export const Navigation = () => {
 
   return (
     <div className="md:hidden block">
-      <nav className=" mx-auto px-4 fixed top-0 left-0 right-0 flex justify-between items-center h-16 bg-white md:hidden z-50">
+      <nav className="mx-auto px-4 fixed top-0 left-0 right-0 flex justify-between items-center h-16 bg-white md:hidden z-50">
         <Logo />
 
         <button onClick={toggleMenu}>

@@ -18,14 +18,33 @@ export const Links = ({ handleLinkClick }: LinksProps) => {
     <ul className="space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row md:flex">
       {links.map((link) => (
         <li key={link.text}>
-          <Link
+          <a
             onClick={handleLinkClick}
             href={link.href}
             className="flex items-center gap-2 hover:text-primary text-xl font-medium"
           >
             <link.icon size="14" className="text-primary" />
             <p>{link.text}</p>
-          </Link>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export const MobileLinks = ({ handleLinkClick }: LinksProps) => {
+  return (
+    <ul className="space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row md:flex">
+      {links.map((link) => (
+        <li key={link.text}>
+          <a
+            onClick={handleLinkClick}
+            href={link.href}
+            className="flex items-center gap-2 text-gray-600 hover:text-primary text-xl font-medium"
+          >
+            <link.icon size="14" className="text-primary" />
+            <p className="">{link.text}</p>
+          </a>
         </li>
       ))}
     </ul>

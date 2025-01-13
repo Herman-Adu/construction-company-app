@@ -36,8 +36,8 @@ export const Filtering = ({ years, locations }: FilteringProps) => {
         defaultValue={searchParams.get(SearchParams.YEAR) as string}
       >
         <option value="">Filter by Year</option>
-        {years.map((year) => (
-          <option key={year} value={year}>
+        {years.map((year, index) => (
+          <option key={index} value={year}>
             {year}
           </option>
         ))}
@@ -50,8 +50,8 @@ export const Filtering = ({ years, locations }: FilteringProps) => {
         defaultValue={searchParams.get(SearchParams.LOCATION) as string}
       >
         <option value="">Filter by Location</option>
-        {locations.map((location) => (
-          <option key={location} value={location}>
+        {locations.map((location, index) => (
+          <option key={index} value={location}>
             {location}
           </option>
         ))}

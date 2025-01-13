@@ -9,12 +9,17 @@ import {
   GrServices,
 } from "react-icons/gr";
 
-export const Links = () => {
+interface LinksProps {
+  handleLinkClick?: () => void;
+}
+
+export const Links = ({ handleLinkClick }: LinksProps) => {
   return (
     <ul className="space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row md:flex">
       {links.map((link) => (
         <li key={link.text}>
           <Link
+            onClick={handleLinkClick}
             href={link.href}
             className="flex items-center gap-2 hover:text-primary text-xl font-medium"
           >

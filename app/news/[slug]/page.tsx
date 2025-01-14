@@ -4,13 +4,11 @@ import { articles } from "../page";
 import { ArticleSingle } from "./modules/ArticleSingle";
 import { SimilarArticles } from "./modules/SimilarArticles";
 
-export default function Article({ params }: { params: { slug: string } }) {
-  console.log("Slug: ", params.slug);
-
-  const article = articles.find((article) => article.id === Number(article.id));
+export default function Work({ params }: { params: { slug: string } }) {
+  const article = articles.find((article) => article.slug === params.slug);
 
   const similarArticles = articles
-    .filter((p) => p.category === article?.category && p.id !== article.id)
+    .filter((p) => p.location === article?.location && p.slug !== article.slug)
     .slice(0, 3);
 
   return (

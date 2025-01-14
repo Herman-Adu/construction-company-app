@@ -18,6 +18,7 @@ export const ProjectSingle = ({
   location,
   year,
 }: ProjectSingleProps) => {
+  console.log("Project Title: ", title);
   return (
     <section>
       <Container>

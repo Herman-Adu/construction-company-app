@@ -8,7 +8,7 @@ import Filtering from "./components/Filtering";
 import { Route, SearchParams } from "@/types/routes";
 import { PaginationControl } from "./components/PaginationControl";
 
-export default function LatestNewsPage({
+export default function ProjectsPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -29,10 +29,10 @@ export default function LatestNewsPage({
   // Total pages
   const totalPages = Math.ceil(articles.length / Number(perPage));
 
-  // get all years each article was written  for select list
+  // get the year each article was completed
   const years = articles.map((article) => article.year);
 
-  // get all categories of articles for select list
+  // get all categories for articles
   const categories = articles.map((article) => article.category);
 
   // Filter articles
@@ -52,7 +52,7 @@ export default function LatestNewsPage({
     }
   });
 
-  // Paginated projects
+  // Paginated articles
   const paginatedArticles = filteredArticles.slice(start, end);
 
   //
@@ -71,8 +71,8 @@ export default function LatestNewsPage({
             {paginatedArticles.map((article) => {
               return (
                 <Link
-                  href={`${Route.LATEST_NEWS}${article.slug}`}
-                  key={article.id}
+                  href={`${Route.LATEST_NEWS}/${article.slug}`}
+                  key={article.title}
                 >
                   <Article {...article} />
                 </Link>
@@ -97,19 +97,21 @@ export default function LatestNewsPage({
 export const articles = [
   {
     id: 1,
-    slug: "/article-1",
+    slug: "article-1",
     title: "article 1",
     year: 2021,
+    location: "New York",
     category: "category 1",
     images: ["/hero.jpg"],
     description:
-      "A cutting-edge architectural project located in the heart of New York, combining modern design with sustainable elements.",
+      "A cutting-edge architectural article located in the heart of New York, combining modern design with sustainable elements.",
   },
   {
     id: 2,
-    slug: "/article-2",
+    slug: "article-2",
     title: "article 2",
     year: 2020,
+    location: "Los Angeles",
     category: "category 2",
     images: ["/hero2.jpg"],
     description:
@@ -117,9 +119,10 @@ export const articles = [
   },
   {
     id: 3,
-    slug: "/article-3",
+    slug: "article-3",
     title: "article 3",
     year: 2019,
+    location: "Chicago",
     category: "category 3",
     images: ["/hero3.jpg"],
     description:
@@ -127,9 +130,10 @@ export const articles = [
   },
   {
     id: 4,
-    slug: "/article-4",
+    slug: "article-4",
     title: "article 4",
     year: 2018,
+    location: "Miami",
     category: "category 4",
     images: ["/hero.jpg"],
     description:
@@ -137,9 +141,10 @@ export const articles = [
   },
   {
     id: 5,
-    slug: "/article-5",
+    slug: "article-5",
     title: "article 5",
     year: 2017,
+    location: "San Francisco",
     category: "category 5",
     images: ["/hero2.jpg"],
     description:
@@ -147,9 +152,10 @@ export const articles = [
   },
   {
     id: 6,
-    slug: "/article-6",
+    slug: "article-6",
     title: "article 6",
     year: 2016,
+    location: "Seattle",
     category: "category 6",
     images: ["/hero3.jpg"],
     description:
@@ -157,9 +163,10 @@ export const articles = [
   },
   {
     id: 7,
-    slug: "/article-7",
+    slug: "article-7",
     title: "article 7",
     year: 2021,
+    location: "New York",
     category: "category 1",
     images: ["/hero.jpg"],
     description:
@@ -167,9 +174,10 @@ export const articles = [
   },
   {
     id: 8,
-    slug: "/article-8",
+    slug: "article-8",
     title: "article 8",
     year: 2020,
+    location: "Los Angeles",
     category: "category 2",
     images: ["/hero2.jpg"],
     description:
@@ -177,9 +185,10 @@ export const articles = [
   },
   {
     id: 9,
-    slug: "/article-9",
+    slug: "article-9",
     title: "article 9",
     year: 2019,
+    location: "Chicago",
     category: "category 3",
     images: ["/hero3.jpg"],
     description:
@@ -187,9 +196,10 @@ export const articles = [
   },
   {
     id: 10,
-    slug: "/article-10",
+    slug: "article-10",
     title: "article 10",
     year: 2018,
+    location: "Miami",
     category: "category 4",
     images: ["/hero.jpg"],
     description:
@@ -197,9 +207,10 @@ export const articles = [
   },
   {
     id: 11,
-    slug: "/article-11",
+    slug: "article-11",
     title: "article 11",
     year: 2017,
+    location: "San Francisco",
     category: "category 5",
     images: ["/hero2.jpg"],
     description:
@@ -207,99 +218,13 @@ export const articles = [
   },
   {
     id: 12,
-    slug: "/article-12",
+    slug: "article-12",
     title: "article 12",
     year: 2016,
+    location: "Seattle",
     category: "category 6",
     images: ["/hero3.jpg"],
     description:
       "An innovative tech campus in Seattle, with state-of-the-art facilities designed for future-focused businesses.",
   },
 ];
-
-/* export const projects = [
-  {
-    id: 1,
-    title: "project 1",
-    year: 2021,
-    location: "New York",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 2,
-    title: "project 2",
-    year: 2020,
-    location: "Los Angeles",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 3,
-    title: "project 3",
-    year: 2019,
-    location: "Chicago",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 4,
-    title: "project 4",
-    year: 2018,
-    location: "Miami",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 5,
-    title: "project 5",
-    year: 2017,
-    location: "San Francisco",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 6,
-    title: "project 6",
-    year: 2016,
-    location: "Seattle",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 7,
-    title: "project 7",
-    year: 2021,
-    location: "New York",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 8,
-    title: "project 8",
-    year: 2020,
-    location: "Los Angeles",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 9,
-    title: "project 9",
-    year: 2019,
-    location: "Chicago",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 10,
-    title: "project 10",
-    year: 2018,
-    location: "Miami",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 11,
-    title: "project 11",
-    year: 2017,
-    location: "San Francisco",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 12,
-    title: "project 12",
-    year: 2016,
-    location: "Seattle",
-    images: ["/hero3.jpg"],
-  },
-]; */

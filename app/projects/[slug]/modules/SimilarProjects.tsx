@@ -7,6 +7,7 @@ import { Route } from "@/types/routes";
 
 interface ProjectProps {
   id: number;
+  slug: string;
   title: string;
   images: string[];
   location: string;
@@ -25,7 +26,7 @@ export const SimilarProjects = ({ projects }: SimilarProjectsProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {projects.map((project) => (
-            <Link href={`${Route.PROJECTS}/${project.id}`} key={project.id}>
+            <Link href={`${Route.PROJECTS}/${project.slug}`} key={project.id}>
               <Project {...project} />
             </Link>
           ))}

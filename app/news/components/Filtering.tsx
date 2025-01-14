@@ -6,6 +6,7 @@ import { SearchParams } from "@/types/routes";
 interface FilteringProps {
   years: number[];
   categories: string[];
+  //locations: string[];
 }
 
 export const Filtering = ({ years, categories }: FilteringProps) => {
@@ -23,7 +24,7 @@ export const Filtering = ({ years, categories }: FilteringProps) => {
     // set params with NEW NAME AND VALUE
     params.set(name, value);
 
-    // Based on filter push new params to the url - http://localhost:3000/latest-news?year=2016&category=cat1
+    // Based on filter push new params to the url - http://localhost:3000/projects?year=2016&location=Seattle
     router.push(pathname + "?" + params.toString());
   };
 
@@ -49,10 +50,10 @@ export const Filtering = ({ years, categories }: FilteringProps) => {
         onChange={handleChange}
         defaultValue={searchParams.get(SearchParams.CATEGORY) as string}
       >
-        <option value="">Filter by category</option>
+        <option value="">Filter by Category</option>
         {categories.map((category, index) => (
           <option key={index} value={category}>
-            {index}
+            {category}
           </option>
         ))}
       </select>

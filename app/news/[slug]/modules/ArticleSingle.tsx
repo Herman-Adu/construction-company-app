@@ -7,7 +7,7 @@ interface ArticleSingleProps {
   title: string;
   images: string[];
   description: string;
-  category: string;
+  location: string;
   year: number;
 }
 
@@ -15,9 +15,10 @@ export const ArticleSingle = ({
   title,
   images,
   description,
-  category,
+  location,
   year,
 }: ArticleSingleProps) => {
+  console.log("Project Title: ", title);
   return (
     <section>
       <Container>
@@ -33,7 +34,7 @@ export const ArticleSingle = ({
             <LabelWithIconAndColor
               icon="/location.png"
               alt="location"
-              text={category}
+              text={location}
             />
 
             <LabelWithIconAndColor

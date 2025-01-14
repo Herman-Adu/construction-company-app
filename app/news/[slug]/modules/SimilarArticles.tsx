@@ -10,19 +10,19 @@ interface ArticleProps {
   slug: string;
   title: string;
   images: string[];
-  category: string;
+  location: string;
   year: number;
 }
 
-interface SimilarArticleProps {
+interface SimilarArticlesProps {
   articles: ArticleProps[];
 }
 
-export const SimilarArticles = ({ articles }: SimilarArticleProps) => {
+export const SimilarArticles = ({ articles }: SimilarArticlesProps) => {
   return (
     <section>
       <Container>
-        <SectionName name="similar articles" />
+        <SectionName name="similar projects" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {articles.map((article) => (

@@ -71,7 +71,7 @@ export default function ProjectsPage({
             {paginatedProjects.map((project) => {
               return (
                 <Link
-                  href={`${Route.PROJECTS}/${project.id}`}
+                  href={`${Route.PROJECTS}/${project.slug}`}
                   key={project.title}
                 >
                   <Project {...project} />
@@ -97,6 +97,7 @@ export default function ProjectsPage({
 export const projects = [
   {
     id: 1,
+    slug: "project-1",
     title: "project 1",
     year: 2021,
     location: "New York",
@@ -106,6 +107,7 @@ export const projects = [
   },
   {
     id: 2,
+    slug: "project-2",
     title: "project 2",
     year: 2020,
     location: "Los Angeles",
@@ -115,6 +117,7 @@ export const projects = [
   },
   {
     id: 3,
+    slug: "project-3",
     title: "project 3",
     year: 2019,
     location: "Chicago",
@@ -124,6 +127,7 @@ export const projects = [
   },
   {
     id: 4,
+    slug: "project-4",
     title: "project 4",
     year: 2018,
     location: "Miami",
@@ -133,6 +137,7 @@ export const projects = [
   },
   {
     id: 5,
+    slug: "project-5",
     title: "project 5",
     year: 2017,
     location: "San Francisco",
@@ -142,6 +147,7 @@ export const projects = [
   },
   {
     id: 6,
+    slug: "project-6",
     title: "project 6",
     year: 2016,
     location: "Seattle",
@@ -151,6 +157,7 @@ export const projects = [
   },
   {
     id: 7,
+    slug: "project-7",
     title: "project 7",
     year: 2021,
     location: "New York",
@@ -160,6 +167,7 @@ export const projects = [
   },
   {
     id: 8,
+    slug: "project-8",
     title: "project 8",
     year: 2020,
     location: "Los Angeles",
@@ -169,6 +177,7 @@ export const projects = [
   },
   {
     id: 9,
+    slug: "project-9",
     title: "project 9",
     year: 2019,
     location: "Chicago",
@@ -178,6 +187,7 @@ export const projects = [
   },
   {
     id: 10,
+    slug: "project-10",
     title: "project 10",
     year: 2018,
     location: "Miami",
@@ -187,6 +197,7 @@ export const projects = [
   },
   {
     id: 11,
+    slug: "project-11",
     title: "project 11",
     year: 2017,
     location: "San Francisco",
@@ -196,6 +207,7 @@ export const projects = [
   },
   {
     id: 12,
+    slug: "project-12",
     title: "project 12",
     year: 2016,
     location: "Seattle",
@@ -204,90 +216,3 @@ export const projects = [
       "An innovative tech campus in Seattle, with state-of-the-art facilities designed for future-focused businesses.",
   },
 ];
-
-/* export const projects = [
-  {
-    id: 1,
-    title: "project 1",
-    year: 2021,
-    location: "New York",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 2,
-    title: "project 2",
-    year: 2020,
-    location: "Los Angeles",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 3,
-    title: "project 3",
-    year: 2019,
-    location: "Chicago",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 4,
-    title: "project 4",
-    year: 2018,
-    location: "Miami",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 5,
-    title: "project 5",
-    year: 2017,
-    location: "San Francisco",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 6,
-    title: "project 6",
-    year: 2016,
-    location: "Seattle",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 7,
-    title: "project 7",
-    year: 2021,
-    location: "New York",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 8,
-    title: "project 8",
-    year: 2020,
-    location: "Los Angeles",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 9,
-    title: "project 9",
-    year: 2019,
-    location: "Chicago",
-    images: ["/hero3.jpg"],
-  },
-  {
-    id: 10,
-    title: "project 10",
-    year: 2018,
-    location: "Miami",
-    images: ["/hero.jpg"],
-  },
-  {
-    id: 11,
-    title: "project 11",
-    year: 2017,
-    location: "San Francisco",
-    images: ["/hero2.jpg"],
-  },
-  {
-    id: 12,
-    title: "project 12",
-    year: 2016,
-    location: "Seattle",
-    images: ["/hero3.jpg"],
-  },
-]; */

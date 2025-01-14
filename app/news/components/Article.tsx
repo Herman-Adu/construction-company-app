@@ -5,24 +5,17 @@ import { LabelWithIcon } from "./LabelWithIcon";
 interface ArticleProps {
   title: string;
   year: number;
-  category: string;
+  location: string;
   images: string[];
-  slug: string;
 }
 
-export const Article = ({
-  title,
-  year,
-  category,
-  images,
-  slug,
-}: ArticleProps) => {
+export const Article = ({ title, year, location, images }: ArticleProps) => {
   return (
     <div>
       <div className="relative h-56 w-full transform transition-transform hover:scale-105 hover:opacity-70">
         <Image
           src={images[0]}
-          alt="article image"
+          alt="project image"
           fill
           className="object-cover"
         />
@@ -30,7 +23,7 @@ export const Article = ({
         <div className="absolute bottom-1 right-1 gap-1">
           <div className="flex gap-1">
             <LabelWithIcon
-              text={category}
+              text={location}
               alt="location"
               icon="/location.png"
             />

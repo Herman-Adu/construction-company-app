@@ -6,9 +6,9 @@ export enum Route {
   RENOVATION_AND_RESTORATION = "/services/renovation-and-restoration",
   MONOLITHIC_CONSTRUCTION = "/services/monolithic-construction",
   PROJECTS = "/projects",
-  PROJECT = "/project/:id",
+  PROJECT = "/project/:slug",
   LATEST_NEWS = "/news",
-  ARTICLES = "/news/:slug",
+  ARTICLE = "/news/:slug",
   CONTACT = "/contact",
 }
 

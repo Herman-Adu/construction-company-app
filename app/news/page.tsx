@@ -55,7 +55,7 @@ export default function ProjectsPage({
   // Paginated articles
   const paginatedArticles = filteredArticles.slice(start, end);
 
-  //
+  // check if Pagination is Visible
   const isPaginationVisible = filteredArticles.length > Number(perPage);
 
   return (

@@ -22,7 +22,7 @@ export const SimilarArticles = ({ articles }: SimilarArticlesProps) => {
   return (
     <section>
       <Container>
-        <SectionName name="similar projects" />
+        <SectionName name="similar articles" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {articles.map((article) => (

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import { motion, useCycle, AnimatePresence, MotionConfig } from "framer-motion";
 import { Logo } from "@/components/Logo";
@@ -8,21 +8,25 @@ import { Container } from "@/components/Container";
 import { MobileLinks } from "./Links";
 
 export const AnimatedMobileNavigation = () => {
-  const [mobileNav, toggleMobileNav] = useCycle(false, true);
+  //const [mobileNav, toggleMobileNav] = useCycle(false, true);
 
   // using useState
-  //const [mobileNav, setMobileNav] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
 
-  /* const toggleMobileNav = () => {
-    // dont close mobile nav after click on Link
-    //setMobileNav(!mobileNav);
-    //setMobileNav((mobileNav) => !mobileNav);
-  }; */
+  // toggle mobile nav with hamburger
+  const toggleMobileNav = () => {
+    setMobileNav((mobileNav) => !mobileNav);
+  };
+
+  // close mobile nav on logo click
+  const toggleLogoNav = () => {
+    setMobileNav(false);
+  };
 
   return (
     <div className="md:hidden block">
       <nav className="mx-auto px-4 fixed top-0 left-0 right-0 flex justify-between items-center h-16 bg-white md:hidden z-50">
-        <Logo />
+        <Logo toggleLogoNav={toggleLogoNav} />
 
         {/* Animate the open and close button */}
         <motion.button
@@ -102,24 +106,37 @@ export const AnimatedMobileNavigation = () => {
               >
                 <Container>
                   <div className="flex mt-8">
-                    <MobileLinks />
+                    <MobileLinks toggleMobileNav={toggleMobileNav} />
                   </div>
                 </Container>
+
                 {/* <ul className="space-y-5">
                   <li>
-                    <a href="/" className="text-3xl font-bold">
+                    <Link
+                      href="/"
+                      className="text-3xl font-bold"
+                      onClick={() => toggleMobileNav()}
+                    >
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/about" className="text-3xl font-bold">
+                    <Link
+                      href="/about"
+                      className="text-3xl font-bold"
+                      onClick={() => toggleMobileNav()}
+                    >
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-3xl font-bold">
+                    <Link
+                      href="#"
+                      className="text-3xl font-bold"
+                      onClick={() => toggleMobileNav()}
+                    >
                       Link 3
-                    </a>
+                    </Link>
                   </li>
                 </ul> */}
               </motion.div>

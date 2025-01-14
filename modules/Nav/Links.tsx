@@ -11,6 +11,7 @@ import {
 
 interface LinksProps {
   handleLinkClick?: () => void;
+  toggleMobileNav?: (() => void | undefined) | undefined;
 }
 
 export const Links = ({ handleLinkClick }: LinksProps) => {
@@ -18,33 +19,33 @@ export const Links = ({ handleLinkClick }: LinksProps) => {
     <ul className="space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row md:flex">
       {links.map((link) => (
         <li key={link.text}>
-          <a
+          <Link
             onClick={handleLinkClick}
             href={link.href}
             className="flex items-center gap-2 hover:text-primary text-xl font-medium"
           >
             <link.icon size="14" className="text-primary" />
             <p>{link.text}</p>
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
   );
 };
 
-export const MobileLinks = ({ handleLinkClick }: LinksProps) => {
+export const MobileLinks = ({ toggleMobileNav }: LinksProps) => {
   return (
     <ul className="space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row md:flex">
       {links.map((link) => (
         <li key={link.text}>
-          <a
-            onClick={handleLinkClick}
+          <Link
+            onClick={() => toggleMobileNav && toggleMobileNav()}
             href={link.href}
             className="flex items-center gap-2 text-gray-600 hover:text-primary text-xl font-medium"
           >
             <link.icon size="14" className="text-primary" />
             <p className="">{link.text}</p>
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

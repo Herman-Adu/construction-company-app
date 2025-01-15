@@ -10,17 +10,17 @@ export const Projects = () => {
     {
       image: "/hero.jpg",
       title: "Project 1",
-      link: "/project1",
+      link: "/projects/project-1",
     },
     {
       image: "/hero2.jpg",
       title: "Project 2",
-      link: "/project2",
+      link: "/projects/project-2",
     },
     {
       image: "/hero3.jpg",
       title: "Project 3",
-      link: "/project3",
+      link: "/projects/project-3",
     },
   ];
 

@@ -13,7 +13,7 @@ export const LabelWithIconAndColor = ({
   text,
 }: LabelWithIconAndColorProps) => {
   return (
-    <div className="flex items-center gap-2 bg-primary ">
+    <div className="flex items-center gap-2 bg-primary p-2">
       <Image src={icon} alt={alt} width={24} height={24} />
 
       <p className="text-sm">{text}</p>

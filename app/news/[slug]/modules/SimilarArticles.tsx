@@ -10,7 +10,7 @@ interface ArticleProps {
   slug: string;
   title: string;
   images: string[];
-  location: string;
+  category: string;
   year: number;
 }
 

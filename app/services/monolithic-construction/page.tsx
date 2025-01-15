@@ -1,4 +1,9 @@
 import { ServicePageContent } from "../modules/ServicePageContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Monolithic construction",
+};
 
 export default function MonolithicConstruction() {
   return <ServicePageContent {...data} />;

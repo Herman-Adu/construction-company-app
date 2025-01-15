@@ -7,8 +7,15 @@ import { Article } from "./components/Article";
 import Filtering from "./components/Filtering";
 import { Route, SearchParams } from "@/types/routes";
 import { PaginationControl } from "./components/PaginationControl";
+import { Metadata } from "next";
 
-export default function ProjectsPage({
+export const metadata: Metadata = {
+  title: "Latest news",
+  description:
+    "Read our article and blogs to gain new insights into the world of construction written by leading industry experts",
+};
+
+export default function NewsPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };

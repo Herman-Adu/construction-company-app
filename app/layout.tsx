@@ -9,9 +9,21 @@ import { AnimatedMobileNavigation } from "@/modules/Nav/AnimatedMobileNavigation
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Contractor App",
-  description: "Construction Company",
+  title: {
+    default: "Construction Company",
+    template: "%s - Construction Company",
+  },
+  description:
+    "Come and see who we are and the construction services we provide. Catch up with our latest projects and articles!",
+  twitter: {
+    card: "summary_large_image",
+  },
 };
+
+/* export const metadata: Metadata = {
+  title: "Construction App",
+  description: "Construction Company",
+}; */
 
 export default function RootLayout({
   children,

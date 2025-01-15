@@ -7,6 +7,11 @@ import { Project } from "./components/Project";
 import Filtering from "./components/Filtering";
 import { Route, SearchParams } from "@/types/routes";
 import { PaginationControl } from "./components/PaginationControl";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 export default function ProjectsPage({
   searchParams,

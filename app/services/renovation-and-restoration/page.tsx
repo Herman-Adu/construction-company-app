@@ -1,4 +1,9 @@
 import { ServicePageContent } from "../modules/ServicePageContent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renovation and restoration",
+};
 
 export default function RenovationAndRestoration() {
   return <ServicePageContent {...data} />;

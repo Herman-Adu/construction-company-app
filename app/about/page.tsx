@@ -8,6 +8,13 @@ import { OurVision } from "./modules/OurVision";
 import { Certificates } from "./modules/Certificates";
 import Link from "next/link";
 import { CoreValues } from "../../modules/CoreValues";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About us",
+  description:
+    "Come and find out who we are what we do and why we and how wwed provide construction services. Meet us aand meet the team",
+};
 
 export default function About() {
   return (
